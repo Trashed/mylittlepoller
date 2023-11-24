@@ -1,0 +1,4 @@
+TODO:
+- Write barebones main application that starts a web server in a separate goroutine
+
+Done:
