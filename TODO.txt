@@ -1,4 +1,3 @@
 TODO:
-- Write barebones main application that starts a web server in a separate goroutine
-
-Done:
+- Start working on the UI code
+    - Replace Vue's Hello World with the app's UI (main/home page at first)

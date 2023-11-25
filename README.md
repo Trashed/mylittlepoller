@@ -19,4 +19,12 @@ When the poller engine finds the content it's looking for, the status is updated
 
 ## Future nice-to-haves
 
-When the first milestone (running the service locally) is reached, it would be nice to put the polling engine running 24/7 in a Raspberry Pi or in the cloud. The web page used for managing and monitoring could still be run locally, and the polling engine could send an email etc. to notify of a status change. 
+When the first milestone (running the service locally) is reached, it would be nice to put the polling engine running 24/7 in a Raspberry Pi or in the cloud. The web page used for managing and monitoring could still be run locally, and the polling engine could send an email etc. to notify of a status change.
+
+## Currently used software versions
+
+- Go: 1.20.4 (windows/amd64)
+- NodeJS: 20.10.0, npm: 10.2.4
+- Yarn: 1.22.21
+- Vue: ^3.3.8
+- Vite: ^5.0.0
