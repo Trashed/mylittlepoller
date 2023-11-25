@@ -4,8 +4,6 @@ type app struct {
 }
 
 func (a app) StartProcess(proc func()) {
-
-	// TODO: For starters, start a goroutine which prints a line each second. Take the function to run as a parameter
 	go proc()
 }
 

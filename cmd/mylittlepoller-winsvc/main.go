@@ -6,12 +6,12 @@ import (
 )
 
 func main() {
-	var server mlp.PageServer = &web.Server{}
+	var server mlp.FrontendServer = web.NewServer()
 
 	app := app{}
 
 	// TODO: Start a web server in a goroutine
-	app.StartProcess(server.ServePage)
+	app.StartProcess(server.ServeFrontend)
 
 	// TODO: Start the polling engine in a goroutine
 	app.RunAndBlock()
