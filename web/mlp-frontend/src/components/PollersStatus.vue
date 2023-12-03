@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
-
-const runningPollers = ref<Poller[]>([]);
-  
-let client: WebSocket;
+import CreateNewPoller from './CreateNewPoller.vue';
 
 interface Poller {
   site: string;
@@ -11,11 +8,15 @@ interface Poller {
   status: string;   // TODO: Could possibly be an enum, as well?
 };
 
+const creatingNew = ref<boolean>(false);
+const runningPollers = ref<Poller[]>([]);
+  
+let client: WebSocket;
 
 onMounted(() => {
   client = new WebSocket('ws://localhost:1212');
   client.onopen = () => {
-    console.log('WebSocket connection opened');   // TODO: Replace with proper logging
+    // console.log('WebSocket connection opened');   // TODO: Replace with proper logging
     client.send('getRunningPollers');
   };
   client.onmessage = (event: MessageEvent<string>) => {
@@ -24,7 +25,7 @@ onMounted(() => {
     try {
       pollers = <Poller[]>JSON.parse(event.data);
     } catch(error: any) {
-      console.error(`Error reading websocket data: ${error}`)
+      // console.error(`Error reading websocket data: ${error}`)  // TODO: Replace with proper logging
     }
 
     if (pollers && pollers.length > 0) {
@@ -59,6 +60,12 @@ onMounted(() => {
     <!-- TODO: Make the error more verbose, 'error-y' -->
     <div v-else id="no-running-pollers-error" >
       <p data-test="no-running-pollers-error">No running pollers</p>
+    </div>
+  </div>
+  <div id="create-new-poller-section">
+    <button v-show="!creatingNew" @click="creatingNew = true" data-test="new-poller-button">Create new poller</button>
+    <div v-if="creatingNew" id="create-new-poller-div" data-test="create-new-poller-div">
+      <CreateNewPoller></CreateNewPoller>
     </div>
   </div>
 </template>

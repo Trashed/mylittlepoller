@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - `cmd/mylittlepoller-winsvc` application binary package that will be run as a Windows service. This is explained in README.
-- `web` package containing `mlp-frontend` Vue project as a subproject. `web` implements server functionality and when used in an executable, will serve the `mlp-frontend` Vue frontend project.  
+- `web` package containing `mlp-frontend` Vue project as a subproject. `web` implements server functionality and when used in an executable, will serve the `mlp-frontend` Vue frontend project.
 - LICENSE, README and CHANGELOG files.
 
-[Unreleased]: https://github.com/Trashed/mylittlepoller
+[Unreleased]: https://github.com/Trashed/mylittlepoller/tree/feature/management-page

@@ -1,5 +1,8 @@
 TODO:
 - Continue working on the UI code
+    - Implement CreateNewPoller component
+        - This component has fields for configuring a new poller, and creates a new poller instance
+        to the poller engine over HTTP POST endpoint.
 - Begin implementing poller engine
     - There is main poller engine -> this is the main process
     - User can start multiple poller instances -> these are subprocesses to poller engine, running concurrently
