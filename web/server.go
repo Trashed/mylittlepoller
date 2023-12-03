@@ -17,13 +17,13 @@ var WebPageFS embed.FS
 type server struct {
 }
 
-func NewServer() mlp.FrontendServer {
+func NewServer() mlp.ManagementPageServer {
 	s := &server{}
 
 	return s
 }
 
-func (s server) ServeFrontend() {
+func (s server) ServeManagementPage() {
 
 	// TODO: This is just for getting the server to start up! Remove when first actual route is being implemented.
 	log.Fatalf("Failed to start web server: %v", http.ListenAndServe(":8080", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

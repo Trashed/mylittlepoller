@@ -1,3 +1,7 @@
 TODO:
-- Start working on the UI code
-    - Replace Vue's Hello World with the app's UI (main/home page at first)
+- Continue working on the UI code
+- Begin implementing poller engine
+    - There is main poller engine -> this is the main process
+    - User can start multiple poller instances -> these are subprocesses to poller engine, running concurrently
+    - Each poller instance calls its own polling and parsing logic in defined intervals
+        - Fetch the predefined site (HTML) and parse it, OR query a predefined search endpoint and parse the result (HTML/JSON possibly)
