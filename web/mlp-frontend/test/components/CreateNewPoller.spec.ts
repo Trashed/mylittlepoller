@@ -8,13 +8,13 @@ describe.concurrent('CreateNewPoller', () => {
   const targetUrlOrQueryEndpoint = '[data-test="target-url-or-query-endpoint"]';
   const addCSSSelectorsDiv = '[data-test="add-css-selectors"]';
   const cssSelectorStringTemplate = '[data-test="css-selector-<id>"]';
+  const addCssSelectorButtonKey = '[data-test="add-css-selector-button"]';
 
   let wrapper: VueWrapper;
 
   let form: BaseWrapper<Element>;
   let targetUrlOrQueryEndpointInputElement: BaseWrapper<Element>;
   let addCSSSelectorsDivElement: BaseWrapper<Element>;
-  // let cssSelectorsInputElement: BaseWrapper<Element>;
 
   beforeEach(async() => {
     wrapper = mount(CreateNewPoller, {
@@ -24,7 +24,6 @@ describe.concurrent('CreateNewPoller', () => {
     form = wrapper.find(newPollerForm);
     targetUrlOrQueryEndpointInputElement = wrapper.find(targetUrlOrQueryEndpoint);
     addCSSSelectorsDivElement = wrapper.find(addCSSSelectorsDiv);
-    // cssSelectorsInputElement = wrapper.find(cssSelectors);
   });
 
   test('should initialise the UI', () => {
@@ -46,6 +45,9 @@ describe.concurrent('CreateNewPoller', () => {
     expect(cssSelectorsElem1.exists()).toBe(true);
 
     // TODO: Button for adding new CSS selectors
+    let addCssSelectorButton = wrapper.find(addCssSelectorButtonKey);
+    expect(addCssSelectorButton).not.toBeNull();
+    expect(addCssSelectorButton.exists()).toBe(true);
   });
 
   test('should create new poller on button click', async() => {

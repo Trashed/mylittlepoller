@@ -36,6 +36,8 @@ function getCssSelectorsId(id: number) {
         <input v-model="cssSelector.cssSelectors" v-bind:id="getCssSelectorsId(cssSelector.id)" type="text" placeholder="CSS selectors to search in the website" v-bind:data-test="getCssSelectorsId(cssSelector.id)"/>
       </div>
     </div>
+    <input class="w3-button w3-ripple w3-green w3-block" type="button" value="+" data-test="add-css-selector-button"/>
+    <!-- <button class="w3-button w3-ripple w3-circle w3-green" data-test="add-css-selector-button">+</button> -->
   </form>
 </template>
 
