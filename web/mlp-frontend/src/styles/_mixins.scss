@@ -1,0 +1,8 @@
+@import './w3';
+
+@mixin btn-block-primary {
+    // w3-button w3-ripple w3-green w3-block
+    @extend .w3-button; 
+    @extend .w3-ripple;
+    @extend .w3-block;
+}

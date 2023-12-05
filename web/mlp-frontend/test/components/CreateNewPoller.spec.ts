@@ -44,7 +44,6 @@ describe.concurrent('CreateNewPoller', () => {
     expect(cssSelectorsElem1).not.toBeNull()
     expect(cssSelectorsElem1.exists()).toBe(true);
 
-    // TODO: Button for adding new CSS selectors
     let addCssSelectorButton = wrapper.find(addCssSelectorButtonKey);
     expect(addCssSelectorButton).not.toBeNull();
     expect(addCssSelectorButton.exists()).toBe(true);
